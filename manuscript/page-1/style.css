@@ -5,34 +5,62 @@ body {
 
 #container {
   box-shadow: inset 0 1px 0 #444, 0 -1px 0 #000;
-  height: 50vh;
+  height: 100vh;
   width: 100vw;
+  z-index: 1;
   position: absolute;
   left: 0;
   top: 0;
   margin: 0;
-  will-change:transform;
+  will-change: transform;
   transform: translateZ(0);
 }
+
 
 canvas {
   display: block;
+  z-index: 0;
+  position:absolute;
+  top:0;
+  left 0;
   margin: 0 auto;
   width: 100%;
-  height: 50vh;
-  will-change:transform;
+  height: 100%;
+  will-change: transform;
   transform: translateZ(0);
+  animation: fade-in 1000ms forwards;
+}
+
+
+
+#waterfall {
+  display: block;
+  margin: 0 auto;
+  width: 60%;
+  height: 50%;
+  will-change: transform;
+  transform: translateZ(0);
+  position: relative;
 }
 
 .emma {
-  height: 50vh;
+  height: 100vh;
   width: 100%;
   position: absolute;
   left: 0;
-  bottom: 0;
+  top: 0;
   margin: 0;
 }
 
 h1 {
-  color: #0cf;
+  color: #ff7b4b;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
